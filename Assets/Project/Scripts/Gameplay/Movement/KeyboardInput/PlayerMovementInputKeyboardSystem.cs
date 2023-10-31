@@ -1,9 +1,9 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Prototype.Gameplay.Movement
+namespace Prototype.Gameplay.Movement.KeyboardInput
 {
-    public class PlayerMovementInputSystem : IEcsRunSystem
+    public class PlayerMovementInputKeyboardSystem : IEcsRunSystem
     {
         private readonly EcsFilter<DirectionComponent> _directionFilter;
 

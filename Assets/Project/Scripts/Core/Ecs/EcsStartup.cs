@@ -3,6 +3,8 @@ using UnityEngine;
 using Voody.UniLeo;
 
 using Prototype.Gameplay.Movement;
+using Prototype.Gameplay.Movement.MobileInput;
+using Prototype.UI.Joystick;
 
 namespace Prototype.Core.Ecs
 {
@@ -18,15 +20,23 @@ namespace Prototype.Core.Ecs
 
             _systems.ConvertScene();
             
+            AddOneFrames();
             AddSystems();
-        
+
             _systems.Init();
+        }
+
+        private void AddOneFrames()
+        {
+            _systems
+                .OneFrame<StickResetComponent>();
         }
         
         private void AddSystems()
         {
             _systems
-                .Add(new PlayerMovementInputSystem())
+                .Add(new JoystickInitSystem())
+                .Add(new PlayerMovementInputStickSystem())
                 .Add(new MovementSystem());
         }
         
