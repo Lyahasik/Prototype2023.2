@@ -1,4 +1,6 @@
 using Leopotam.Ecs;
+using Prototype.Gameplay.Inventory;
+using Prototype.Gameplay.Item;
 using UnityEngine;
 using Voody.UniLeo;
 
@@ -20,8 +22,8 @@ namespace Prototype.Core.Ecs
 
             _systems.ConvertScene();
             
-            AddOneFrames();
             AddSystems();
+            AddOneFrames();
 
             _systems.Init();
         }
@@ -29,7 +31,8 @@ namespace Prototype.Core.Ecs
         private void AddOneFrames()
         {
             _systems
-                .OneFrame<StickResetComponent>();
+                .OneFrame<StickResetComponent>()
+                .OneFrame<ItemTakenComponent>();
         }
         
         private void AddSystems()
@@ -37,7 +40,9 @@ namespace Prototype.Core.Ecs
             _systems
                 .Add(new JoystickInitSystem())
                 .Add(new PlayerMovementInputStickSystem())
-                .Add(new MovementSystem());
+                .Add(new PlayerMovementResetStickSystem())
+                .Add(new MovementSystem())
+                .Add(new InventoryTakenSystem());
         }
         
         private void Update()

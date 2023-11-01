@@ -7,7 +7,6 @@ namespace Prototype.Gameplay.Movement
     {
         private const float NormalStep = 1f;
         
-        private readonly EcsWorld _world;
         private readonly EcsFilter<TransformComponent, MovementComponent, DirectionComponent> _movementFilter;
 
         public void Run()
