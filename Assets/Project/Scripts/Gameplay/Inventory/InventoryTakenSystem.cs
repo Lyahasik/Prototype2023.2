@@ -17,7 +17,7 @@ namespace Prototype.Gameplay.Inventory
                 ref int numberItems = ref _inventoryFilter.Get1(id).NumberItems;
 
                 numberItems++;
-                Debug.Log($"Number item: { numberItems }");
+                Debug.Log($"Take item. Number item: { numberItems }");
             }
         }
     }

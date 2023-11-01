@@ -1,11 +1,12 @@
 using Leopotam.Ecs;
-using Prototype.Gameplay.Inventory;
-using Prototype.Gameplay.Item;
 using UnityEngine;
 using Voody.UniLeo;
 
 using Prototype.Gameplay.Movement;
 using Prototype.Gameplay.Movement.MobileInput;
+using Prototype.Gameplay.Blocker;
+using Prototype.Gameplay.Inventory;
+using Prototype.Gameplay.Item;
 using Prototype.UI.Joystick;
 
 namespace Prototype.Core.Ecs
@@ -42,7 +43,9 @@ namespace Prototype.Core.Ecs
                 .Add(new PlayerMovementInputStickSystem())
                 .Add(new PlayerMovementResetStickSystem())
                 .Add(new MovementSystem())
-                .Add(new InventoryTakenSystem());
+                .Add(new BlockerSystem())
+                .Add(new InventoryTakenSystem())
+                .Add(new InventoryDropSystem());
         }
         
         private void Update()
