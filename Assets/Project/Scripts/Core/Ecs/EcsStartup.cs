@@ -7,6 +7,7 @@ using Prototype.Gameplay.Movement.MobileInput;
 using Prototype.Gameplay.Blocker;
 using Prototype.Gameplay.Inventory;
 using Prototype.Gameplay.Item;
+using Prototype.Gameplay.Spawner;
 using Prototype.UI.Joystick;
 
 namespace Prototype.Core.Ecs
@@ -39,6 +40,7 @@ namespace Prototype.Core.Ecs
         private void AddSystems()
         {
             _systems
+                .Add(new SpawnerSystem())
                 .Add(new JoystickInitSystem())
                 .Add(new PlayerMovementInputStickSystem())
                 .Add(new PlayerMovementResetStickSystem())
