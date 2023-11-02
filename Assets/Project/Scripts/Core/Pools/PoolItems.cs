@@ -9,27 +9,26 @@ namespace Prototype.Core.Pools
     {
         [SerializeField] private GameObject prefab;
         
-        private Stack<LyingItem> _items;
+        private Stack<Item> _items;
 
-        public LyingItem GetItem()
+        public Item GetItem()
         {
-            _items ??= new Stack<LyingItem>();
+            _items ??= new Stack<Item>();
         
             if (_items.Count <= 0)
             {
-                LyingItem newItem = Instantiate(prefab, transform).GetComponent<LyingItem>();
-                newItem.PoolItems = this;
+                Item newItem = Instantiate(prefab, transform).GetComponent<Item>();
                 
                 return newItem;
             }
         
-            LyingItem item = _items.Pop();
+            Item item = _items.Pop();
             item.gameObject.SetActive(true);
 
             return item;
         }
     
-        public void ReturnItem(LyingItem item)
+        public void ReturnItem(Item item)
         {
             item.gameObject.SetActive(false);
             item.transform.parent = transform;

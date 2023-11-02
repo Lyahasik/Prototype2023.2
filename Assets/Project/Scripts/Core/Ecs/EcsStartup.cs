@@ -8,7 +8,9 @@ using Prototype.Gameplay.Movement.MobileInput;
 using Prototype.Gameplay.Blocker;
 using Prototype.Gameplay.Inventory;
 using Prototype.Gameplay.Item;
+using Prototype.Gameplay.ItemDropArea;
 using Prototype.Gameplay.Spawner;
+using Prototype.UI.Inventory;
 using Prototype.UI.Joystick;
 
 namespace Prototype.Core.Ecs
@@ -16,6 +18,9 @@ namespace Prototype.Core.Ecs
     public class EcsStartup : MonoBehaviour
     {
         [SerializeField] private PoolItems poolItems;
+
+        [Space]
+        [SerializeField] private Inventory inventory;
         
         private EcsWorld _world;
         private EcsSystems _systems;
@@ -37,14 +42,16 @@ namespace Prototype.Core.Ecs
         private void AddInjections()
         {
             _systems
-                .Inject(poolItems);
+                .Inject(poolItems)
+                .Inject(inventory);
         }
 
         private void AddOneFrames()
         {
             _systems
                 .OneFrame<StickResetComponent>()
-                .OneFrame<ItemTakenComponent>();
+                .OneFrame<ItemTakenComponent>()
+                .OneFrame<ItemRaisedComponent>();
         }
         
         private void AddSystems()
@@ -56,8 +63,9 @@ namespace Prototype.Core.Ecs
                 .Add(new PlayerMovementResetStickSystem())
                 .Add(new MovementSystem())
                 .Add(new BlockerSystem())
-                .Add(new InventoryTakenSystem())
-                .Add(new InventoryDropSystem());
+                .Add(new PlayerInventoryTakenSystem())
+                .Add(new DropAreaSystem())
+                .Add(new ReturningItemsToPoolSystem());
         }
         
         private void Update()

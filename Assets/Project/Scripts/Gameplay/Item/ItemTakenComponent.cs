@@ -1,6 +1,7 @@
-using Leopotam.Ecs;
-
 namespace Prototype.Gameplay.Item
 {
-    public struct ItemTakenComponent : IEcsIgnoreInFilter {}
+    public struct ItemTakenComponent
+    {
+        public Item Item;
+    }
 }

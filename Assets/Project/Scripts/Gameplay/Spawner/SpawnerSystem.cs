@@ -3,7 +3,6 @@ using UnityEngine;
 
 using Prototype.Core.Pools;
 using Prototype.Gameplay.Blocker;
-using Prototype.Gameplay.Item;
 
 namespace Prototype.Gameplay.Spawner
 {
@@ -21,7 +20,7 @@ namespace Prototype.Gameplay.Spawner
                 ref var  blockerComponent = ref _spawnerFilter.Get2(id);
                 ref var  prefab = ref spawnerComponent.prefab;
                 
-                LyingItem item = _poolItems.GetItem();
+                Item.Item item = _poolItems.GetItem();
                 item.transform.parent = spawnerComponent.parentItems;
                 
                 int idSpawnTransform = Random.Range(0, spawnerComponent.transforms.Count);
