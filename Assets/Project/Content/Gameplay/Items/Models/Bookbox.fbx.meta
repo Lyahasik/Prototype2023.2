@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 855c7d5576893bd499944936bec73afc
-timeCreated: 1459814732
+guid: f7e6c16df4a5d1d42ab3fdc66f878f42
+timeCreated: 1459814734
 licenseType: Store
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: SO_Floor_01
+    100000: SO_Bookbox_01
     100002: //RootNode
-    400000: SO_Floor_01
+    400000: SO_Bookbox_01
     400002: //RootNode
-    2300000: SO_Floor_01
+    2300000: SO_Bookbox_01
     2300002: //RootNode
-    3300000: SO_Floor_01
+    3300000: SO_Bookbox_01
     3300002: //RootNode
-    4300000: SO_Floor_01
+    4300000: SO_Bookbox_01
     9500000: //RootNode
   materials:
     importMaterials: 0

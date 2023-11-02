@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 855c7d5576893bd499944936bec73afc
-timeCreated: 1459814732
+guid: 59b700a451f12cd4e9071e3da36e8329
+timeCreated: 1459814731
 licenseType: Store
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: SO_Floor_01
+    100000: SO_RubbishBin_01
     100002: //RootNode
-    400000: SO_Floor_01
+    400000: SO_RubbishBin_01
     400002: //RootNode
-    2300000: SO_Floor_01
+    2300000: SO_RubbishBin_01
     2300002: //RootNode
-    3300000: SO_Floor_01
+    3300000: SO_RubbishBin_01
     3300002: //RootNode
-    4300000: SO_Floor_01
+    4300000: SO_RubbishBin_01
     9500000: //RootNode
   materials:
     importMaterials: 0
